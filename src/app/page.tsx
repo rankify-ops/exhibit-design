@@ -1,13 +1,13 @@
 import { hero, intro, pillars, projects, testimonials } from "@/content/site";
 import { Btn, Eyebrow, Ph } from "@/components/ui";
 import { FeatureSlider, Steps } from "@/components/Interactive";
-import { EnquirySection, TypeChips } from "@/components/Enquiry";
+import { EnquirySection, HeroStarter, ProcessLink } from "@/components/Enquiry";
 
 export default function Home() {
   return (
     <>
-      {/* Hero: full-bleed photo/video, centred light headline, project-type shortcut */}
-      <section className="ph-dark relative flex min-h-[calc(100svh-64px)] items-center justify-center overflow-hidden text-white md:min-h-[calc(100svh-96px)]">
+      {/* Hero: full-bleed photo/video, centred light headline, enquiry starter */}
+      <section className="ph-dark relative flex min-h-[calc(100svh-64px)] items-center justify-center overflow-hidden py-24 text-white md:min-h-[calc(100svh-96px)]">
         <span className="absolute right-4 top-4 text-[11px] text-white/40">Hero video / photo</span>
         <div className="absolute inset-0 bg-black/25" aria-hidden />
         <div className="relative w-full px-5 text-center">
@@ -21,7 +21,8 @@ export default function Home() {
               </span>
             ))}
           </p>
-          <TypeChips />
+          <HeroStarter />
+          <ProcessLink />
         </div>
         <svg viewBox="0 0 20 20" className="absolute bottom-7 left-1/2 size-5 -translate-x-1/2" fill="none" stroke="currentColor" aria-hidden>
           <path d="m4 7 6 6 6-6" />

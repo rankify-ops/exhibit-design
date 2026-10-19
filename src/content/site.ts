@@ -93,6 +93,15 @@ export const feature = {
 // First paragraph (or the most relevant one) of each step, verbatim.
 export const steps = {
   eyebrow: "Steps to your new home",
+  // Petar on the call (2026-10-19), lightly trimmed — confirm wording with him.
+  headline: "Architect and builder — everything from start to finish.",
+  quote: "The same person that’s talking to you about the design is the same person that’s executing the design.",
+  // Their tagline split across the steps: index ranges into items.
+  phases: [
+    { label: "Design", span: 2 },
+    { label: "Build", span: 4 },
+    { label: "Live", span: 1 },
+  ],
   items: [
     {
       title: "Say Hello",
@@ -117,6 +126,10 @@ export const steps = {
     {
       title: "Construction and Handover",
       body: "Once the land has been titled or cleared, it’s time for Exhibit Design & Construction site team to take the lead. At this stage, we ensure that construction is in accordance with the approved plans, selections and quality controls.",
+    },
+    {
+      title: "Live",
+      body: "Congratulations! Your brand new home is complete and ready for you to move in! Relax and enjoy the features, inclusions and lifestyle of your new home.",
     },
   ],
 };

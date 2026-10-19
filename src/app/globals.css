@@ -69,3 +69,8 @@
     background-image: repeating-linear-gradient(135deg, transparent 0 22px, rgba(255, 255, 255, 0.03) 22px 23px);
   }
 }
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
