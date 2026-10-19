@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+/*
+ * Skeleton modelled on modinex.com.au
+ * ───────────────────────────────────
+ * Quiet architectural register: white ground, charcoal ink, one pale grey
+ * band, light-weight grotesk (300) at every size, hairline dividers and
+ * outlined pill buttons with an arrow. Imagery does all the talking, so every
+ * photo slot is a full-bleed or tall portrait frame.
+ *
+ * Swap the three colour tokens and the font once the client's brand arrives.
+ */
+
+:root {
+  --ink: #2a2a2b;
+  --ink-2: #5d5d60;
+  --ink-3: #9a9a9d;
+  --white: #ffffff;
+  --mist: #f5f5f5;
+  --rule: #e2e2e2;
+  --ph: #e7e5e1;
+  --ph-2: #d9d6d0;
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-mist: var(--mist);
+  --color-rule: var(--rule);
+  --color-ph: var(--ph);
+  --color-ph-2: var(--ph-2);
+  --font-sans: var(--font-grotesk);
+}
+
+@layer components {
+  html {
+    overflow-x: hidden;
+    background: var(--white);
+    scroll-behavior: smooth;
+    scroll-padding-top: 72px;
+  }
+
+  body {
+    background: var(--white);
+    color: var(--ink);
+    font-family: var(--font-grotesk), system-ui, sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4 { font-weight: 300; letter-spacing: -0.02em; }
+
+  .wrap { width: 100%; padding-inline: 20px; margin-inline: auto; }
+  @media (min-width: 768px) { .wrap { padding-inline: 40px; } }
+  @media (min-width: 1280px) { .wrap { padding-inline: 80px; } }
+
+  /* Small kicker above each section ("How we work", "Who we are"). */
+  .eyebrow { font-size: 12px; color: var(--ink-3); letter-spacing: 0.01em; }
+
+  /* Image slot: neutral stone tone with a faint diagonal so it reads as "photo goes here". */
+  .ph {
+    background-color: var(--ph);
+    background-image: repeating-linear-gradient(135deg, transparent 0 22px, rgba(0, 0, 0, 0.025) 22px 23px);
+  }
+  .ph-dark {
+    background-color: #3a3a3c;
+    background-image: repeating-linear-gradient(135deg, transparent 0 22px, rgba(255, 255, 255, 0.03) 22px 23px);
+  }
+}
