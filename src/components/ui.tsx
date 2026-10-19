@@ -1,7 +1,7 @@
 export function Arrow({ className = "" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.2" className={`size-4 ${className}`} aria-hidden>
-      <path d="M2 8h11M9 4l4 4-4 4" />
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="square" className={`size-3.5 ${className}`} aria-hidden>
+      <path d="M4 12 12 4M5.5 4H12v6.5" />
     </svg>
   );
 }
