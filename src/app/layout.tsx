@@ -13,8 +13,8 @@ const grotesk = Inter_Tight({
 });
 
 export const metadata: Metadata = {
-  title: "Client Name — skeleton",
-  description: "Placeholder description.",
+  title: "Exhibit Design + Construction | Architectural House Design and Construction Canberra",
+  description: "Exhibit Design + Construction specialise in Architectural house design and Construction in Canberra.",
   robots: { index: false, follow: false },
 };
 

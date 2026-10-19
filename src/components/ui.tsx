@@ -43,7 +43,7 @@ export function Btn({
 export function Ph({ label, className = "", dark = false }: { label: string; className?: string; dark?: boolean }) {
   return (
     <div className={`${dark ? "ph-dark" : "ph"} relative ${className}`} role="img" aria-label={`Placeholder: ${label}`}>
-      <span className={`absolute right-3 top-3 text-[11px] ${dark ? "text-white/40" : "text-ink/40"}`}>{label}</span>
+      <span className={`absolute bottom-3 right-3 text-[11px] ${dark ? "text-white/40" : "text-ink/40"}`}>{label}</span>
     </div>
   );
 }

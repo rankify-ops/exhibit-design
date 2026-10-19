@@ -1,57 +1,61 @@
 import { footer, site } from "@/content/site";
-import { Arrow } from "./ui";
 
 export function Footer() {
+  const tel = `tel:${site.phone.replace(/\s/g, "")}`;
   return (
     <footer className="border-t border-rule bg-white">
       <div className="wrap py-14 md:py-20">
         <div className="flex flex-col gap-4 border-b border-ink pb-8 md:flex-row md:items-end md:justify-between">
-          {/* Large logo slot */}
+          {/* Large logo slot — typographic until the new logo files arrive */}
           <p className="text-4xl tracking-tight md:text-5xl">{site.name}</p>
           <p className="text-sm text-ink-2">{footer.tagline}</p>
         </div>
 
-        <div className="grid gap-10 pt-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0">
-          {footer.columns.map((col, i) => (
-            <div key={i} className="lg:border-r lg:border-ink-3/40 lg:px-10 lg:first:pl-0">
-              <p className="mb-4 text-sm font-normal">{col.heading}</p>
-              <ul className="space-y-1.5 text-sm text-ink-2">
-                {col.links.map((l, j) => (
-                  <li key={j}>
-                    <a href="#" className="hover:text-ink">
-                      {l}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-
-          <div className="lg:pl-10">
-            <p className="mb-4 text-sm font-normal">{footer.newsletter.heading}</p>
-            <p className="mb-4 text-sm text-ink-2">{footer.newsletter.body}</p>
-            <a href="#" className="flex w-full items-center justify-center gap-3 rounded-full border border-ink py-2.5 text-sm hover:bg-ink hover:text-white">
-              {footer.newsletter.cta}
-              <Arrow />
-            </a>
-            <p className="mt-6 text-sm text-ink-2">P — {site.phone}</p>
-            <p className="text-sm text-ink-2">E — {site.email}</p>
+        <div className="grid gap-10 pt-10 sm:grid-cols-3 sm:gap-0">
+          <div className="sm:border-r sm:border-ink-3/40 sm:pr-10">
+            <ul className="space-y-1.5 text-sm text-ink-2">
+              {site.nav.map((l) => (
+                <li key={l.label}>
+                  <a href={l.href} className="hover:text-ink">
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="sm:border-r sm:border-ink-3/40 sm:px-10">
+            <p className="text-sm text-ink-2">
+              P —{" "}
+              <a href={tel} className="hover:text-ink">
+                {site.phone}
+              </a>
+            </p>
+            <p className="break-all text-sm text-ink-2">
+              E —{" "}
+              <a href={`mailto:${site.email}`} className="hover:text-ink">
+                {site.email}
+              </a>
+            </p>
+          </div>
+          <div className="sm:pl-10">
+            <ul className="space-y-1.5 text-sm text-ink-2">
+              <li>
+                <a href={site.instagram} target="_blank" rel="noopener" className="hover:text-ink">
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a href={site.facebook} target="_blank" rel="noopener" className="hover:text-ink">
+                  Facebook
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
-
-        <p className="mt-14 text-center text-xs text-ink-3">{footer.acknowledgement}</p>
       </div>
 
       <div className="border-t border-rule py-6 text-center text-xs text-ink-2">
-        Copyright {new Date().getFullYear()} {site.name}
-        {footer.legal.map((l) => (
-          <span key={l}>
-            <span className="mx-3 text-ink-3">|</span>
-            <a href="#" className="hover:text-ink">
-              {l}
-            </a>
-          </span>
-        ))}
+        © Copyright - {site.name}
       </div>
     </footer>
   );

@@ -31,10 +31,10 @@ jobs:
 
       - name: Build static export
         env:
-          # Preview lives at rankify-ops.github.io/modinex-skeleton/.
+          # Preview lives at rankify-ops.github.io/exhibit-design/.
           # At domain cutover: delete this line AND add public/CNAME, together —
           # one without the other 404s every asset.
-          NEXT_PUBLIC_BASE_PATH: /modinex-skeleton
+          NEXT_PUBLIC_BASE_PATH: /exhibit-design
         run: npm run build
 
       - name: Disable Jekyll

@@ -12,7 +12,7 @@ function Chevron() {
   );
 }
 
-/** Logo slot until the client's mark arrives. */
+/** Typographic stand-in until the new logo files arrive. */
 function LogoSlot() {
   return <span className="text-[15px] tracking-tight">{site.name}</span>;
 }
@@ -30,11 +30,15 @@ export function Header() {
           </svg>
           {site.phone}
         </a>
-        {site.utility.map((l, i) => (
-          <a key={i} href="#" className="hover:opacity-70">
-            {l}
-          </a>
-        ))}
+        <a href={`mailto:${site.email}`} className="hover:opacity-70">
+          {site.email}
+        </a>
+        <a href={site.instagram} target="_blank" rel="noopener" className="hover:opacity-70">
+          Instagram
+        </a>
+        <a href={site.facebook} target="_blank" rel="noopener" className="hover:opacity-70">
+          Facebook
+        </a>
       </div>
 
       {/* Main bar */}
@@ -45,9 +49,8 @@ export function Header() {
 
         <nav className="hidden flex-1 items-center gap-7 px-8 text-[15px] lg:flex">
           {site.nav.map((l) => (
-            <a key={l} href="#" className="flex items-center gap-2.5 hover:text-ink-2">
-              {l}
-              <Chevron />
+            <a key={l.label} href={l.href} className="hover:text-ink-2">
+              {l.label}
             </a>
           ))}
         </nav>
@@ -72,20 +75,14 @@ export function Header() {
           </button>
         </div>
 
-        <button className="hidden w-16 items-center justify-center border-l border-rule lg:flex" aria-label="Search">
-          <svg viewBox="0 0 20 20" className="size-5" fill="none" stroke="currentColor" strokeWidth="1.3" aria-hidden>
-            <circle cx="9" cy="9" r="6" />
-            <path d="m13.5 13.5 4 4" />
-          </svg>
-        </button>
       </div>
 
       {/* Mobile menu */}
       {open && (
         <nav className="border-b border-rule bg-white px-5 pb-6 lg:hidden">
           {site.nav.map((l) => (
-            <a key={l} href="#" className="flex items-center justify-between border-b border-rule py-4 text-lg" onClick={() => setOpen(false)}>
-              {l}
+            <a key={l.label} href={l.href} className="flex items-center justify-between border-b border-rule py-4 text-lg" onClick={() => setOpen(false)}>
+              {l.label}
               <Chevron />
             </a>
           ))}
